@@ -7,11 +7,11 @@ import frc.robot.subsystems.Motor;
 
 public class VelocityCommand extends Command {
     private final Motor motor;
-    private final double velocity;
+    private final DoubleSupplier velocity;
 
     public VelocityCommand(Motor motor, DoubleSupplier velocitySupplier) {
         this.motor = motor;
-        this.velocity = velocitySupplier.getAsDouble();
+        this.velocity = velocitySupplier;
         addRequirements(motor);
     }
 

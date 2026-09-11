@@ -32,9 +32,9 @@ public class Motor extends SubsystemBase{
 
     }
 
-    public void setVelocity(double velocity) {
-        motor.setControl(velocityClosedCycle.withVelocity(velocity * Constants.MotorConstants.kMotorMaxRPS));
-        SmartDashboard.putNumber("Motor Velocity", velocity * Constants.MotorConstants.kMotorMaxRPS);
+    public void setVelocity(DoubleSupplier velocity) {
+        motor.setControl(velocityClosedCycle.withVelocity(velocity.getAsDouble() * Constants.MotorConstants.kMotorMaxRPS));
+        SmartDashboard.putNumber("Motor Velocity", velocity.getAsDouble() * Constants.MotorConstants.kMotorMaxRPS);
     }
 
     public void setPosition(double position) {

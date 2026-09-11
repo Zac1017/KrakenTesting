@@ -16,4 +16,9 @@ public class PositionCommand extends Command {
     public void execute() {
         motor.setPosition(position);
     }
+    @Override
+    public boolean isFinished() {
+        motor.setPosition(0);
+        return true;
+    }
 }
