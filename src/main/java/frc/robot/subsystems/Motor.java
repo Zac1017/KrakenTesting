@@ -2,9 +2,12 @@ package frc.robot.subsystems;
 
 import java.util.function.DoubleSupplier;
 
+import com.ctre.phoenix6.configs.TalonFXConfiguration;
 import com.ctre.phoenix6.controls.PositionDutyCycle;
 import com.ctre.phoenix6.controls.VelocityDutyCycle;
 import com.ctre.phoenix6.hardware.TalonFX;
+import com.ctre.phoenix6.signals.InvertedValue;
+import com.ctre.phoenix6.signals.NeutralModeValue;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
@@ -15,7 +18,16 @@ public class Motor extends SubsystemBase{
     private final VelocityDutyCycle velocityClosedCycle = new VelocityDutyCycle(0);
 
     public Motor() {
-        //TODO: Configure the motor settings here
+        TalonFXConfiguration motorConfig = new TalonFXConfiguration();
+        
+        motorConfig.CurrentLimits.SupplyCurrentLimit = 40;
+        motorConfig.CurrentLimits.SupplyCurrentLimitEnable = true;
+
+        motorConfig.MotorOutput.Inverted = InvertedValue.Clockwise_Positive;
+        motorConfig.MotorOutput.NeutralMode = NeutralModeValue.Coast;
+
+        motor.getConfigurator().apply(motorConfig);
+
     }
 
     public void setVelocity(double velocity) {
