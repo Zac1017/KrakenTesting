@@ -16,4 +16,11 @@ public final class Constants {
   public static class OperatorConstants {
     public static final int kDriverControllerPort = 0;
   }
+
+  public static class PositionConstants {
+    public static final double kPosition1 = -1.0;
+    public static final double kPosition2 = 0.0;
+    public static final double kPosition3 = 1.0;
+    public static final double kPosition4 = 3.0;
+  }
 }

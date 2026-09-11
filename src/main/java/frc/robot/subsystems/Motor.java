@@ -14,13 +14,8 @@ public class Motor extends SubsystemBase{
     private final PositionDutyCycle positionClosedCycle = new PositionDutyCycle(0.0d).withEnableFOC(false);
     private final VelocityDutyCycle velocityClosedCycle = new VelocityDutyCycle(0);
 
-    private DoubleSupplier velocity;
-    private DoubleSupplier position;
-
-    public Motor(double velocity, double position) {
-        this.velocity = () -> velocity;
-        this.position = () -> position;
-
+    public Motor() {
+        //TODO: Configure the motor settings here
     }
 
     public void setVelocity(double velocity) {
