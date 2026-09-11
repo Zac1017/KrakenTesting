@@ -11,6 +11,7 @@ import com.ctre.phoenix6.signals.NeutralModeValue;
 
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import frc.robot.Constants;
 
 public class Motor extends SubsystemBase{
 
@@ -32,13 +33,13 @@ public class Motor extends SubsystemBase{
     }
 
     public void setVelocity(double velocity) {
-        motor.setControl(velocityClosedCycle.withVelocity(velocity));
-        SmartDashboard.putNumber("Motor Velocity", velocity);
+        motor.setControl(velocityClosedCycle.withVelocity(velocity * Constants.MotorConstants.kMotorMaxRPS));
+        SmartDashboard.putNumber("Motor Velocity", velocity * Constants.MotorConstants.kMotorMaxRPS);
     }
 
     public void setPosition(double position) {
-        motor.setControl(positionClosedCycle.withPosition(position));
-        SmartDashboard.putNumber("Motor Position", position);
+        motor.setControl(positionClosedCycle.withPosition(position * Constants.MotorConstants.kMotorMaxRPS));
+        SmartDashboard.putNumber("Motor Position", position * Constants.MotorConstants.kMotorMaxRPS);
     }
 
 }
