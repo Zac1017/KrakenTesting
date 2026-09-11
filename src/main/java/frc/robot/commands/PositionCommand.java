@@ -13,12 +13,11 @@ public class PositionCommand extends Command {
     }
 
     @Override
-    public void execute() {
+    public void initialize() {
         motor.setPosition(position);
     }
     @Override
     public boolean isFinished() {
-        motor.setPosition(0);
         return true;
     }
 }
