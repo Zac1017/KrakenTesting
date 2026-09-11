@@ -9,6 +9,7 @@ import com.ctre.phoenix6.hardware.TalonFX;
 import com.ctre.phoenix6.signals.InvertedValue;
 import com.ctre.phoenix6.signals.NeutralModeValue;
 
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class Motor extends SubsystemBase{
@@ -32,10 +33,12 @@ public class Motor extends SubsystemBase{
 
     public void setVelocity(double velocity) {
         motor.setControl(velocityClosedCycle.withVelocity(velocity));
+        SmartDashboard.putNumber("Motor Velocity", velocity);
     }
 
     public void setPosition(double position) {
         motor.setControl(positionClosedCycle.withPosition(position));
+        SmartDashboard.putNumber("Motor Position", position);
     }
 
 }
