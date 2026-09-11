@@ -38,8 +38,8 @@ public class Motor extends SubsystemBase{
     }
 
     public void setPosition(double position) {
-        motor.setControl(positionClosedCycle.withPosition(position * Constants.MotorConstants.kMotorMaxRPS));
-        SmartDashboard.putNumber("Motor Position", position * Constants.MotorConstants.kMotorMaxRPS);
+        motor.setControl(positionClosedCycle.withPosition(position * (Constants.MotorConstants.kMotorMaxRPS / 10)));
+        SmartDashboard.putNumber("Motor Position", position * (Constants.MotorConstants.kMotorMaxRPS / 10));
     }
 
 }

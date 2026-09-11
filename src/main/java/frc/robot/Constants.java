@@ -20,8 +20,8 @@ public final class Constants {
   public static class PositionConstants {
     public static final double kPosition1 = -1.0;
     public static final double kPosition2 = 0.0;
-    public static final double kPosition3 = 1.0;
-    public static final double kPosition4 = 3.0;
+    public static final double kPosition3 = 0.5;
+    public static final double kPosition4 = 1.0;
   }
 
   public static class MotorConstants {
